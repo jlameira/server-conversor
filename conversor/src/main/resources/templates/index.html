@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/header :: header('Upload index')" />
+<body>
+	<div id="root">
+	<h2>Index Upload</h2>
+	</div>
+
+</body>
+<div th:replace="fragments/footer :: foot"></div>
+
+<script>
+    var app = new Vue({
+        el: '#root',
+        data : {
+        	video: ""
+    }
+   
+    });
+</script>
+</html>
