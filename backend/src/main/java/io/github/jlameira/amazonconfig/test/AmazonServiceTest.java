@@ -33,8 +33,8 @@ public class AmazonServiceTest {
     public void init(){
         storageProperties.setLocation("https://s3.amazonaws.com");
         propertiesS3.setBucketName("conversor-jonathan");
-        propertiesS3.setKey("AKIAJ4LDNGZZ4HT4VPVA");
-        propertiesS3.setPrivateKey("7PfHY6SmBq2+QSPsbpkyr3ntnTAkd0J2TN9kLaPc");
+        propertiesS3.setKey("");
+        propertiesS3.setPrivateKey("");
         propertiesS3.setRegion("us-east-1");
         amazonConfiguration = new AmazonConfiguration(propertiesS3);
         amazonService = new AmazonService(amazonConfiguration.amazonS3(),storageProperties, propertiesS3 );
