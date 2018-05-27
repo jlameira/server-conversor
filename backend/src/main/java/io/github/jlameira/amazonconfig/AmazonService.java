@@ -119,6 +119,11 @@ public class AmazonService implements IAmazonService {
                 Application.logger.info("Faltando " + (contentLength - filePosition));
             }
 
+            //Delete the original file
+            if (!file2.delete()) {
+                System.out.println("Could not delete file");
+            }
+
             // Step 3: Complete.
             CompleteMultipartUploadRequest compRequest = new
                     CompleteMultipartUploadRequest(

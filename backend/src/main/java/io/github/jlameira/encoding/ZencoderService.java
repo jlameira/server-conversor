@@ -7,6 +7,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
+import org.springframework.context.annotation.Configuration;
 import org.springframework.stereotype.Service;
 
 import java.io.BufferedReader;
@@ -16,6 +17,7 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 
 @Service
+@Configuration
 @EnableConfigurationProperties(ZencoderProps.class)
 public class ZencoderService implements IZencoderService {
 
@@ -76,7 +78,7 @@ public class ZencoderService implements IZencoderService {
     private String sendEncodeRequest(String request_body) {
         try {
             // Create connection.
-            URL url = new URL("https://app.zencoder.com/api/v2/jobs");
+            URL url = new URL(_properties.getUrl());
             HttpURLConnection con = (HttpURLConnection) url.openConnection();
             // Setting Header
             con.setRequestMethod("POST");
@@ -87,11 +89,9 @@ public class ZencoderService implements IZencoderService {
             wr.writeBytes(request_body.toString());
             wr.flush();
             wr.close();
-            // Get response code.
             int response_code = con.getResponseCode();
-            //Log.
-//            Application.logger.info("\nSending 'POST' request to URL : " + url);
-//            Application.logger.info("Response Code : " + response_code);
+            Application.logger.info("\'POST' in URL : " + url);
+            Application.logger.info("Response Code : " + response_code);
             // Read response
             BufferedReader in = new BufferedReader(
                     new InputStreamReader(con.getInputStream()));
@@ -102,12 +102,11 @@ public class ZencoderService implements IZencoderService {
             }
             in.close();
             // Return response in string format.
-//            Application.logger.info("RESPONSE:");
-//            Application.logger.info(response.toString());
+            Application.logger.info("RESPONSE:");
+            Application.logger.info(response.toString());
             return response.toString();
         } catch (Exception e) {
-//            throw new EncodingException("Error when sending Zencoder job.");
-            return String.valueOf(e.getStackTrace());
+            throw new ZencoderException("Error in Zencoder job.");
         }
     }
 

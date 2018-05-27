@@ -58,22 +58,8 @@ public class ConversorController {
                     output_filename, "output"
             );
 
-            // Prepare return string.
-            JSONObject response_JSON = new JSONObject(response);
-            Object input_id = response_JSON.get("id");
-            Object output_id = ((JSONObject) ((JSONArray) response_JSON.get("outputs")).get(0)).get("id");
-            Object output_url = ((JSONObject) ((JSONArray) response_JSON.get("outputs")).get(0)).get("url");
 
-            JSONObject return_JSON = new JSONObject();
-            return_JSON.put("input_id", input_id);
-            return_JSON.put("output_id", output_id);
-            return_JSON.put("output_url", output_url);
-            return_JSON.put("zencoder_key", TEST_API_KEY);
-            // Return string
-
-
-
-            return new ResponseEntity( return_JSON.toString(), HttpStatus.OK);
+            return new ResponseEntity( response, HttpStatus.OK);
         } catch (Exception e) {
             return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
         }

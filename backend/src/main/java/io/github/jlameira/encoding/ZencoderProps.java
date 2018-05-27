@@ -1,10 +1,9 @@
 package io.github.jlameira.encoding;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
-import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Bean;
 
-@Configuration
-@ConfigurationProperties("encoding")
+@ConfigurationProperties(prefix="encoding")
 public class ZencoderProps {
     private String full_key = "unknown";
     private String read_key = "unknown";

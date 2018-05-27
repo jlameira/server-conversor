@@ -19,8 +19,8 @@ public class ZencoderServiceTest {
     @Before
     public void setUp() throws Exception {
         propertiesS3.setRegion("us-east-1");
-        zencoderProps.setFullKey("");
-        zencoderProps.setReadKey("");
+        zencoderProps.setFullKey("4a08ca50cf2218b50c6a51e6e0b85ab1");
+        zencoderProps.setReadKey("408178f8c7b2ecdbba7972a7ab3c78fb");
         zencoderProps.setUrl("https://app.zencoder.com/api/v2/jobs");
         this.zencoderService = new ZencoderService(zencoderProps, propertiesS3);
         this.zencoderService.initial();
