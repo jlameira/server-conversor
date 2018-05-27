@@ -10,7 +10,7 @@
 /.tern-project
 /bin/
 /target
-backend/.idea/
+backend/.idea
 backend/target
 frontend/dist/
 frontend/node/
