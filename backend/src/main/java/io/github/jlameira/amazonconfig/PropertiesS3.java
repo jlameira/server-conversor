@@ -5,9 +5,9 @@ import org.springframework.context.annotation.Configuration;
 
 @ConfigurationProperties("storage.s3")
 public class PropertiesS3 {
-    private String bucket_name = "unknown";
+    private String bucketName = "unknown";
     private String key = "unknown";
-    private String private_key = "unknown";
+    private String privateKey = "unknown";
     private String region = "unknown";
 
     public String getRegion() {
@@ -25,19 +25,19 @@ public class PropertiesS3 {
     }
 
     public String getPrivateKey() {
-        return this.private_key;
+        return this.privateKey;
     }
 
     public void setPrivateKey(String name) {
-        this.private_key = name;
+        this.privateKey = name;
     }
 
     public String getBucketName() {
-        return this.bucket_name;
+        return this.bucketName;
     }
 
     public void setBucketName(String name) {
-        this.bucket_name = name;
+        this.bucketName = name;
     }
 
 }

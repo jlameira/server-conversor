@@ -5,8 +5,8 @@ import org.springframework.context.annotation.Bean;
 
 @ConfigurationProperties(prefix="encoding")
 public class ZencoderProps {
-    private String full_key = "unknown";
-    private String read_key = "unknown";
+    private String fullKey = "unknown";
+    private String readKey = "unknown";
     private String url = "unknown";
 
     public String getUrl() {
@@ -18,18 +18,18 @@ public class ZencoderProps {
     }
 
     public String getFullKey() {
-        return this.full_key;
+        return this.fullKey;
     }
 
     public void setFullKey(String name) {
-        this.full_key = name;
+        this.fullKey = name;
     }
 
     public String getReadKey() {
-        return this.read_key;
+        return this.readKey;
     }
 
     public void setReadKey(String name) {
-        this.read_key = name;
+        this.readKey = name;
     }
 }

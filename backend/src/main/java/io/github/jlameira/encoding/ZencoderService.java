@@ -106,7 +106,7 @@ public class ZencoderService implements IZencoderService {
             Application.logger.info(response.toString());
             return response.toString();
         } catch (Exception e) {
-            throw new ZencoderException("Error in Zencoder job.");
+            throw new ZencoderException("Error in Zencoder job.", e);
         }
     }
 
@@ -134,7 +134,7 @@ public class ZencoderService implements IZencoderService {
             return return_JSON.toString();
         } catch (JSONException e) {
             // TODO Auto-generated catch block
-            throw new ZencoderException("Error encode.");
+            throw new ZencoderException("Error encode.", e);
         }
     }
 
