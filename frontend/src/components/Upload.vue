@@ -99,10 +99,9 @@ export default {
         }
       };
       axios
-        .post("/api/upload", formData, config)
+        .post(this.url, formData, config)
         .then(wait(1500), (this.loading = true)) // DEV ONLY: wait for 1.5s
         .then(x => {
-          debugger;
           this.uploadedFiles = [].concat(x);
           this.currentStatus = STATUS_SUCCESS;
           this.source = x.data.output_url;
@@ -112,6 +111,7 @@ export default {
           this.uploadError = err.response;
           this.currentStatus = STATUS_FAILED;
           this.loading = false;
+          this.uploadedFiles = [];
         });
     },
     filesChange(fieldName, fileList) {
