@@ -5,11 +5,9 @@ import Upload from '@/components/Upload'
 Vue.use(Router)
 
 export default new Router({
-  routes: [
-    {
-      path: '/',
-      name: 'Upload',
-      component: Upload
-    }
-  ]
+  routes: [{
+    path: '/',
+    name: 'Upload',
+    component: Upload
+  }]
 })

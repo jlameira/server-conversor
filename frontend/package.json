@@ -1,7 +1,7 @@
 {
   "name": "frontend",
   "version": "1.0.0",
-  "description": "encoder-video",
+  "description": "zencoder video and aws s3 storage",
   "author": "jlameira@gmail.com",
   "private": true,
   "scripts": {

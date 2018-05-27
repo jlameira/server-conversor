@@ -8,6 +8,7 @@
 // http://nightwatchjs.org/guide#writing-custom-assertions
 
 exports.assertion = function (selector, count) {
+
   this.message = 'Testing if element <' + selector + '> has count: ' + count
   this.expected = count
   this.pass = function (val) {
