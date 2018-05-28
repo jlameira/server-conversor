@@ -1,4 +1,4 @@
-# SpringVue Starter
+# SpringBoot Vue
 
 > A Spring-Boot Vue.js project
 > Project into Heroku
@@ -9,7 +9,7 @@
 # Installation
 
 This app uses Vue.js, Spring Boot, Git, Npm and Webpack
-
+* This is a base my project https://gitlab.com/randyyaj/SpringVue-Starter
 * [vue](https://vuejs.org/)
 * [spring boot](https://spring.io/guides/gs/spring-boot/)
 * [webpack](https://webpack.js.org/)
