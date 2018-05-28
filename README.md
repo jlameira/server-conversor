@@ -4,7 +4,7 @@
 > Project into Heroku
 >https://encoder-file.herokuapp.com/
 
->add file smaller than 200mb 
+>add file smaller than 80mb 
 
 # Installation
 
